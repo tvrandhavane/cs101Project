@@ -1,0 +1,121 @@
+#include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <ctime>
+#include <cstdio>
+#include "ezwin.h" 
+using namespace std;
+#include "bitmap.h"
+SimpleWindow Game_Board("Game Board",19.5,19.5,Position(4.0,2.0));
+BitMap Game_Board1(Game_Board);
+BitMap House1(Game_Board);
+BitMap House2(Game_Board);
+BitMap Hotel(Game_Board);
+BitMap Player1(Game_Board);
+BitMap Player2(Game_Board);
+int ApiMain() {
+	Position P[72];
+	char AnyChar;
+	Game_Board.Open();	
+	Game_Board1.Load("Game_Board.xpm");
+	House1.Load("h1.xpm");
+	House2.Load("h1.xpm");
+	Hotel.Load("hotel.xpm");
+	Player1.Load("c1.xpm");
+	Player2.Load("c3.xpm");
+	Position WindowCenter=Game_Board.GetCenter();
+	Position Game_Board1Position= WindowCenter+Position(-0.5*Game_Board1.GetWidth(),-0.5*Game_Board1.GetHeight());
+	Position House1Position=Position(3.5,0.7);
+	Position House2Position=Position(4.2,0.7);
+	Position HotelPosition=Position(3.5,1.2);
+	P[0]=Position(16.0,2.5);
+	P[36]=Position(17.8,2.5);
+	P[1]=Position(17.0,3.7);
+	P[37]=Position(17.9,3.7);
+	P[2]=Position(17.0,5.2);
+	P[38]=Position(17.9,5.2);
+	P[3]=Position(17.0,6.7);
+	P[39]=Position(17.9,6.7);
+	P[4]=Position(17.0,8.2);
+	P[40]=Position(17.9,8.2);
+	P[5]=Position(17.0,9.8);
+	P[41]=Position(17.9,9.8);
+	P[6]=Position(17.0,11.35);
+	P[42]=Position(17.9,11.35);
+	P[7]=Position(17.0,12.95);
+	P[43]=Position(17.9,12.95);
+	P[8]=Position(17.0,14.5);
+	P[44]=Position(17.9,14.5);
+	P[9]=Position(16.2,17.9);
+	P[45]=Position(17.9,16.1);
+	P[10]=Position(15,17.9);
+	P[46]=Position(15,16.9);
+	P[11]=Position(13.2,17.9);
+	P[47]=Position(13.2,16.9);
+	P[12]=Position(11.6,17.9);
+	P[48]=Position(11.6,16.9);
+	P[13]=Position(10.2,17.9);
+	P[49]=Position(10.2,16.9);
+	P[14]=Position(8.6,17.9);
+	P[50]=Position(8.6,16.9);
+	P[15]=Position(7,17.9);
+	P[51]=Position(7,16.9);
+	P[16]=Position(5.4,17.9);
+	P[52]=Position(5.4,16.9);
+	P[17]=Position(3.8,17.9);
+	P[53]=Position(3.8,16.9);
+	P[18]=Position(0.7,16.1);
+	P[54]=Position(0.7,17.9);
+	P[19]=Position(0.7,14.5);
+	P[55]=Position(1.6,14.5);
+	P[20]=Position(0.7,12.95);
+	P[56]=Position(1.6,12.95);
+	P[21]=Position(0.7,11.35);
+	P[57]=Position(1.6,11.35);
+	P[22]=Position(0.7,9.8);
+	P[58]=Position(1.6,9.8);
+	P[23]=Position(0.7,8.2);
+	P[59]=Position(1.6,8.2);
+	P[24]=Position(0.7,6.7);
+	P[60]=Position(1.6,6.7);
+	P[25]=Position(0.7,5.2);
+	P[61]=Position(1.6,5.2);
+	P[26]=Position(0.7,3.7);
+	P[62]=Position(1.6,3.7);
+	P[27]=Position(1.2,1.5);
+	P[63]=Position(2.1,1.5);
+	P[28]=Position(3.8,0.65);
+	P[64]=Position(3.8,1.55);
+	P[29]=Position(5.4,0.65);
+	P[65]=Position(5.4,1.55);
+	P[30]=Position(7.0,0.65);
+	P[66]=Position(7.0,1.55);
+	P[31]=Position(8.6,0.65);
+	P[67]=Position(8.6,1.55);
+	P[32]=Position(10.2,0.65);
+	P[68]=Position(10.2,1.55);
+	P[33]=Position(11.6,0.65);
+	P[69]=Position(11.6,1.55);
+	P[34]=Position(13.2,0.65);
+	P[70]=Position(13.2,1.55);
+	P[35]=Position(15.0,0.65);
+	P[71]=Position(15.0,1.55);
+	Game_Board1.SetPosition(Game_Board1Position);
+	Game_Board1.Draw();
+	House1.SetPosition(House1Position);
+	House1.Draw();
+	House2.SetPosition(House2Position);
+	House2.Draw();
+	Hotel.SetPosition(HotelPosition);
+	Hotel.Draw();
+	Player1.SetPosition(P[35]);
+	Player1.Draw();
+	Player2.SetPosition(P[71]);
+	Player2.Draw();
+	cout<<"Enter a character"<<endl;
+	cin>>AnyChar;
+	Game_Board.Close();
+	
+        return 0;
+}
+
